@@ -1,0 +1,16 @@
+{
+  "name": "hemis/hemis-oauth",
+  "description": "Test app integration with HEMIS oAuth server",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Shavkat Khamidjonov",
+      "email": "dev@hemis.uz"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "league/oauth2-client": "dev-master"
+  }
+}
