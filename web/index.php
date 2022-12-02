@@ -9,7 +9,7 @@ $employeeProvider = new \League\OAuth2\Client\Provider\GenericProvider([
     'urlAuthorize'            => 'https://univer.hemis.uz/oauth/authorize',
     'urlAccessToken'          => 'https://univer.hemis.uz/oauth/access-token',
     //available fields: id,uuid,university_id,type,firstname,surname,patronymic,login,picture,email,phone,birth_date
-    'urlResourceOwnerDetails' => 'https://univer.hemis.uz/oauth/api/user?fields=id,uuid,type,name,login,picture,email,university_id,phone'
+    'urlResourceOwnerDetails' => 'https://univer.hemis.uz/oauth/api/user?fields=id,uuid,type,roles,name,login,picture,email,university_id,phone'
 ]);
 /*
 $studentProvider = new \League\OAuth2\Client\Provider\GenericProvider([
