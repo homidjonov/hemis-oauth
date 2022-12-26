@@ -8,17 +8,17 @@ $employeeProvider = new \League\OAuth2\Client\Provider\GenericProvider([
     'redirectUri'             => 'http://hemis-oauth-test.lc/index.php',
     'urlAuthorize'            => 'https://univer.hemis.uz/oauth/authorize',
     'urlAccessToken'          => 'https://univer.hemis.uz/oauth/access-token',
-    //available fields: id,uuid,university_id,type,firstname,surname,patronymic,login,picture,email,phone,birth_date
+    //available fields: id,uuid,type,roles,name,login,email,phone,picture,firstname,surname,patronymic,birth_date,university_id,groups
     'urlResourceOwnerDetails' => 'https://univer.hemis.uz/oauth/api/user?fields=id,uuid,type,roles,name,login,picture,email,university_id,phone'
 ]);
-/*
-$studentProvider = new \League\OAuth2\Client\Provider\GenericProvider([
+
+/*$studentProvider = new \League\OAuth2\Client\Provider\GenericProvider([
     'clientId'                => '8',
     'clientSecret'            => 'Vt5dnZtzK_v3vzs0ycsV2uLzrh7zicZUrz4TEiOI',
     'redirectUri'             => 'http://hemis-oauth-test.lc/index.php',
     'urlAuthorize'            => 'https://student.hemis.uz/oauth/authorize',
     'urlAccessToken'          => 'https://student.hemis.uz/oauth/access-token',
-    'urlResourceOwnerDetails' => 'https://student.hemis.uz/oauth/api/user?fields=id,uuid,type,name,login,picture,email,university_id,phone'
+    'urlResourceOwnerDetails' => 'https://student.hemis.uz/oauth/api/user?fields=id,uuid,type,name,login,picture,email,university_id,phone,groups'
 ]);
 */
 
@@ -66,9 +66,7 @@ if (!isset($_GET['code'])) {
         // resource owner.
         $resourceOwner = $employeeProvider->getResourceOwner($accessToken);
 
-        foreach ($resourceOwner->toArray() as $key => $value) {
-            echo "<p>$key: <b>$value</b></p>";
-        }
+        echo "<pre>" . print_r($resourceOwner->toArray(), true) . "</pre>";
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
         // Failed to get the access token or user details.
