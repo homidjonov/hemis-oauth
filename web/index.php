@@ -8,8 +8,7 @@ $employeeProvider = new \League\OAuth2\Client\Provider\GenericProvider([
     'redirectUri'             => 'http://hemis-oauth-test.lc/index.php',
     'urlAuthorize'            => 'https://univer.hemis.uz/oauth/authorize',
     'urlAccessToken'          => 'https://univer.hemis.uz/oauth/access-token',
-    //available fields: id,uuid,type,roles,name,login,email,phone,picture,firstname,surname,patronymic,birth_date,university_id,groups
-    'urlResourceOwnerDetails' => 'https://univer.hemis.uz/oauth/api/user?fields=id,uuid,type,roles,name,login,picture,email,university_id,phone'
+    'urlResourceOwnerDetails' => 'https://univer.hemis.uz/oauth/api/user?fields=id,uuid,employee_id_number,type,roles,name,login,email,picture,firstname,surname,patronymic,birth_date,university_id,phone'
 ]);
 
 /*$studentProvider = new \League\OAuth2\Client\Provider\GenericProvider([
@@ -18,7 +17,7 @@ $employeeProvider = new \League\OAuth2\Client\Provider\GenericProvider([
     'redirectUri'             => 'http://hemis-oauth-test.lc/index.php',
     'urlAuthorize'            => 'https://student.hemis.uz/oauth/authorize',
     'urlAccessToken'          => 'https://student.hemis.uz/oauth/access-token',
-    'urlResourceOwnerDetails' => 'https://student.hemis.uz/oauth/api/user?fields=id,uuid,type,name,login,picture,email,university_id,phone,groups'
+    'urlResourceOwnerDetails' => 'https://student.hemis.uz/oauth/api/user?fields=id,uuid,student_id_number,type,roles,name,login,email,phone,picture,firstname,surname,patronymic,birth_date,university_id,groups'
 ]);
 */
 
